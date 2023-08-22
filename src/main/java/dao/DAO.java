@@ -69,7 +69,6 @@ public class DAO {
              PreparedStatement preparedStatement =
                      connection.prepareStatement("select * from Currencies where code = '" + code + "'")) {
             ResultSet rs = preparedStatement.executeQuery();
-
             if (rs.next()) {
                 currency = createNewCurrency(rs);
             }
