@@ -9,10 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="246c71e5-fe18-4519-97da-72d6579bc84e" name="Changes" comment="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Currency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/ExchangeRate.java" afterDir="false" />
+    <list default="true" id="246c71e5-fe18-4519-97da-72d6579bc84e" name="Changes" comment="feat: added CurrenciesServlet and CurrencyServlet">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/CurrencyServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/IndexServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CurrenciesServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +33,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -47,22 +53,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/base/ME/Java/UserManagement&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "B:/ME/Java/CurrencyExchanger"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="TomCat10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.10" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 10.1.10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.10" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="CurrencyExchanger:war exploded">
@@ -72,7 +78,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="2400d1e4-bd59-4500-8ad0-2118d3e4bc0d" />
+        <option name="BASE_DIRECTORY_NAME" value="0622b1e6-24b7-4f4d-a92b-7940b50140f2" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -80,7 +86,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="43809" />
+        <option name="DEBUG_PORT" value="53378" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -161,7 +167,10 @@
       <workItem from="1691767237867" duration="3314000" />
       <workItem from="1691925522686" duration="370000" />
       <workItem from="1691926138536" duration="1929000" />
-      <workItem from="1691930392484" duration="1028000" />
+      <workItem from="1691930392484" duration="1393000" />
+      <workItem from="1692302478628" duration="690000" />
+      <workItem from="1692549451110" duration="2464000" />
+      <workItem from="1692712884350" duration="9039000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)">
       <created>1691930932720</created>
@@ -177,7 +186,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691930987267</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: added models">
+      <created>1691931468522</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691931468522</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: added models">
+      <created>1691931556992</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691931556992</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +219,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)" />
+    <MESSAGE value="feat: added models" />
+    <MESSAGE value="feat: added CurrenciesServlet and CurrencyServlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added CurrenciesServlet and CurrencyServlet" />
   </component>
 </project>
