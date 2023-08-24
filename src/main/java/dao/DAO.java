@@ -32,7 +32,7 @@ public class DAO {
             return null;
         }
     }
-    /*private ExchangeRate createNewExchangeRate(ResultSet resultSet) {
+    private ExchangeRate createNewExchangeRate(ResultSet resultSet) {
         try {
             return new ExchangeRate(
                     resultSet.getInt("id"),
@@ -42,7 +42,7 @@ public class DAO {
         } catch (SQLException e) {
             return null;
         }
-    }*/
+    }
     public List<Currency> findAllCurrency() {
 
         List<Currency> currencies = new ArrayList<>();
@@ -51,11 +51,7 @@ public class DAO {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String code = rs.getString("code");
-                String fullName = rs.getString("FullName");
-                String sign = rs.getString("sign");
-                currencies.add(new Currency(id, code, fullName, sign));
+                currencies.add(createNewCurrency(rs));
             }
 
         } catch (SQLException e) {
@@ -106,6 +102,26 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
+    public ExchangeRate findExchangeRateByCodes(String baseCurrencyCode, String targetCurrencyCode) {
+        ExchangeRate exchangeRate = null;
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement =
+                     connection.prepareStatement("SELECT * FROM ExchangeRates WHERE " +
+                             "basecurrencyid=? AND targetcurrencyid=?")) {
+            preparedStatement.setInt(1, findCurrencyByCode(baseCurrencyCode).getId());
+            preparedStatement.setInt(2, findCurrencyByCode(targetCurrencyCode).getId());
+
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.getResultSet();
+
+            if (resultSet.next()) {
+                exchangeRate = createNewExchangeRate(resultSet);
+            }
+            return exchangeRate;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public List<ExchangeRate> findAllExchangeRate() {
 
         List<ExchangeRate> exchangeRates = new ArrayList<>();
@@ -114,10 +130,7 @@ public class DAO {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                exchangeRates.add(new ExchangeRate(rs.getInt("id"),
-                        findCurrencyById(rs.getInt("BaseCurrencyId")),
-                        findCurrencyById(rs.getInt("TargetCurrencyId")),
-                        rs.getDouble("rate")));
+                exchangeRates.add(createNewExchangeRate(rs));
             }
             return exchangeRates;
 

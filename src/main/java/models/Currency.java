@@ -18,9 +18,10 @@ public class Currency {
 
     @Override
     public String toString() {
-        return "\n"+"\t{\n" + "\t\t\"id\": " + id + ", \n" +
-                "\t\t\"name\": " + "\"" + fullName + "\", \n" +
-                "\t\t\"code\": " + "\"" + code + "\", \n" +
-                "\t\t\"sign\": " + "\"" + sign + "\"\n"+"\t}";
+        return "\n\t\t{\n" +
+                "\t\t\t\"id\": " + id + ", \n" +
+                "\t\t\t\"name\": " + "\"" + fullName + "\", \n" +
+                "\t\t\t\"code\": " + "\"" + code + "\", \n" +
+                "\t\t\t\"sign\": " + "\"" + sign + "\"\n\t\t}";
     }
 }

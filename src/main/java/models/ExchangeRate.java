@@ -4,7 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
@@ -17,4 +16,11 @@ public class ExchangeRate {
     @NonNull
     private double rate;
 
+    public String toString() {
+        return "\n\t{\n" +
+                "\t\t\"id\": " + id + ", \n" +
+                "\t\t\"baseCurrency\": "  + "\"" + baseCurrency + "\", \n" +
+                "\t\t\"targetCurrency\": " + "\"" + targetCurrency + "\", \n" +
+                "\t\t\"rate\": " + rate + "\n\t}";
+    }
 }

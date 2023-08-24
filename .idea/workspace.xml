@@ -9,13 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0d00170-9ab9-414c-b344-6f78ef40ea9d" name="Changes" comment="feat: added POST request for CurrenciesServlet">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRatesServlet.java" afterDir="false" />
+    <list default="true" id="b0d00170-9ab9-414c-b344-6f78ef40ea9d" name="Changes" comment="feat: added ExchangeRatesServlet">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRateServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Currency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/ExchangeRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ExchangeRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CurrenciesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CurrenciesServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CurrencyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CurrencyServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,8 @@
       <workItem from="1692729479010" duration="2246000" />
       <workItem from="1692731883396" duration="426000" />
       <workItem from="1692799795472" duration="10302000" />
-      <workItem from="1692863771097" duration="10808000" />
+      <workItem from="1692863771097" duration="10958000" />
+      <workItem from="1692905163076" duration="3345000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)">
       <created>1691930932720</created>
@@ -199,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692727151102</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: added ExchangeRatesServlet">
+      <created>1692878716777</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692878716777</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +226,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)" />
     <MESSAGE value="feat: added POST request for CurrenciesServlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added POST request for CurrenciesServlet" />
+    <MESSAGE value="feat: added ExchangeRatesServlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added ExchangeRatesServlet" />
   </component>
 </project>
