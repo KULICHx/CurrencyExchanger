@@ -22,7 +22,7 @@ public class CurrenciesServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException{
-        List<Currency> listCurrency = DAO.selectAllCurrency();
+        List<Currency> listCurrency = DAO.findAllCurrency();
         PrintWriter pw = response.getWriter();
         pw.write(String.valueOf(listCurrency));
     }

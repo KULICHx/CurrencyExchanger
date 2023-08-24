@@ -1,7 +1,9 @@
 package dao;
 
 import models.Currency;
+import models.ExchangeRate;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,13 +26,24 @@ public class DAO {
             return new Currency(
                     resultSet.getInt("id"),
                     resultSet.getString("code"),
-                    resultSet.getString("fullname"),
+                    resultSet.getString("fullName"),
                     resultSet.getString("sign"));
         } catch (SQLException e) {
             return null;
         }
     }
-    public List<Currency> selectAllCurrency() {
+    /*private ExchangeRate createNewExchangeRate(ResultSet resultSet) {
+        try {
+            return new ExchangeRate(
+                    resultSet.getInt("id"),
+                    findCurrencyById(resultSet.getInt("BaseCurrencyId")),
+                    findCurrencyById(resultSet.getInt("TargetCurrencyId")),
+                    resultSet.getDouble("rate"));
+        } catch (SQLException e) {
+            return null;
+        }
+    }*/
+    public List<Currency> findAllCurrency() {
 
         List<Currency> currencies = new ArrayList<>();
         try (Connection connection = getConnection();
@@ -52,7 +65,7 @@ public class DAO {
     }
 
     public void insertCurrency(Currency currency){
-        try (Connection connection = getConnection();
+        try (Connection connection = getConnection( );
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Currencies " +
                      " (code, fullName, sign) VALUES  (?, ?, ?);")) {
             preparedStatement.setString(1, currency.getCode());
@@ -63,16 +76,51 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
-    public Currency selectCurrency(String code) {
+    public Currency findCurrencyByCode(String code) {
         Currency currency = null;
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement =
-                     connection.prepareStatement("select * from Currencies where code = '" + code + "'")) {
+                     connection.prepareStatement("SELECT * FROM Currencies WHERE code = '" + code + "'")) {
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 currency = createNewCurrency(rs);
             }
             return currency;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public Currency findCurrencyById(int id) {
+
+        Currency currency = null;
+
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement =
+                     connection.prepareStatement("SELECT * FROM Currencies WHERE id= " + id)) {
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                currency = createNewCurrency(rs);
+            }
+            return currency;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public List<ExchangeRate> findAllExchangeRate() {
+
+        List<ExchangeRate> exchangeRates = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM ExchangeRates")) {
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                exchangeRates.add(new ExchangeRate(rs.getInt("id"),
+                        findCurrencyById(rs.getInt("BaseCurrencyId")),
+                        findCurrencyById(rs.getInt("TargetCurrencyId")),
+                        rs.getDouble("rate")));
+            }
+            return exchangeRates;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -5,24 +5,24 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import models.Currency;
+import models.ExchangeRate;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
-@WebServlet(name = "indexCurrencyServlet", value = "/currency/*")
-public class CurrencyServlet extends HttpServlet{
-    private DAO DAO;
+@WebServlet(name = "indexExchangeRates", value = "/exchangeRates")
+public class ExchangeRatesServlet extends HttpServlet {
+    private dao.DAO DAO;
     public void init()
     {
         DAO = new DAO();
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
-        String currencyCode = request.getPathInfo().replaceFirst("/", "").toUpperCase();
-        Currency currency = DAO.findCurrencyByCode(currencyCode);
+            throws IOException{
+        List<ExchangeRate> listExchangeRate = DAO.findAllExchangeRate();
         PrintWriter pw = response.getWriter();
-        pw.write(String.valueOf(currency));
+        pw.write(String.valueOf(listExchangeRate));
     }
 }
