@@ -9,9 +9,9 @@ import lombok.*;
 @RequiredArgsConstructor
 public class ExchangeRate {
     private int id;
-
+    @NonNull
     private Currency baseCurrency;
-
+    @NonNull
     private Currency targetCurrency;
     @NonNull
     private double rate;

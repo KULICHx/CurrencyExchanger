@@ -138,4 +138,16 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
+    public void insertExchangeRate(ExchangeRate exchangeRate){
+        try (Connection connection = getConnection( );
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ExchangeRates" +
+                     " (basecurrencyid, targetcurrencyid, rate) VALUES (?, ?, ?)")) {
+            preparedStatement.setInt(1, exchangeRate.getBaseCurrency().getId());
+            preparedStatement.setInt(2, exchangeRate.getTargetCurrency().getId());
+            preparedStatement.setDouble(3, exchangeRate.getRate());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
