@@ -15,7 +15,6 @@ public class Utils {
             return null;
         }
     }
-
     public static String getStringFormInputStream(InputStream inputStream) {
         Scanner s = new Scanner(inputStream).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";

@@ -32,6 +32,7 @@ public class DAO {
             return null;
         }
     }
+
     private ExchangeRate createNewExchangeRate(ResultSet resultSet) {
         try {
             return new ExchangeRate(
@@ -43,6 +44,7 @@ public class DAO {
             return null;
         }
     }
+
     public List<Currency> findAllCurrency() {
 
         List<Currency> currencies = new ArrayList<>();
@@ -60,8 +62,8 @@ public class DAO {
         return currencies;
     }
 
-    public void insertCurrency(Currency currency){
-        try (Connection connection = getConnection( );
+    public void insertCurrency(Currency currency) {
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Currencies " +
                      " (code, fullName, sign) VALUES  (?, ?, ?);")) {
             preparedStatement.setString(1, currency.getCode());
@@ -72,6 +74,7 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
+
     public Currency findCurrencyByCode(String code) {
         Currency currency = null;
         try (Connection connection = getConnection();
@@ -86,6 +89,7 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
+
     public Currency findCurrencyById(int id) {
 
         Currency currency = null;
@@ -102,6 +106,7 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
+
     public ExchangeRate findExchangeRateByCodes(String baseCurrencyCode, String targetCurrencyCode) {
         ExchangeRate exchangeRate = null;
         try (Connection connection = getConnection();
@@ -122,6 +127,7 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
+
     public List<ExchangeRate> findAllExchangeRate() {
 
         List<ExchangeRate> exchangeRates = new ArrayList<>();
@@ -138,8 +144,9 @@ public class DAO {
             throw new RuntimeException(e);
         }
     }
-    public void insertExchangeRate(ExchangeRate exchangeRate){
-        try (Connection connection = getConnection( );
+
+    public void insertExchangeRate(ExchangeRate exchangeRate) {
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ExchangeRates" +
                      " (basecurrencyid, targetcurrencyid, rate) VALUES (?, ?, ?)")) {
             preparedStatement.setInt(1, exchangeRate.getBaseCurrency().getId());

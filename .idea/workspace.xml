@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0d00170-9ab9-414c-b344-6f78ef40ea9d" name="Changes" comment="feat: added ExchangeRateServlet and fixed Overload ToString method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
+    <list default="true" id="b0d00170-9ab9-414c-b344-6f78ef40ea9d" name="Changes" comment="feat: feat: added POST request for ExchangeRateServlet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRatesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRatesServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +178,10 @@
       <workItem from="1692863771097" duration="10958000" />
       <workItem from="1692905163076" duration="3602000" />
       <workItem from="1692908945359" duration="224000" />
-      <workItem from="1692948761509" duration="3218000" />
+      <workItem from="1692948761509" duration="3569000" />
+      <workItem from="1692993017253" duration="1571000" />
+      <workItem from="1693030484032" duration="972000" />
+      <workItem from="1693131550995" duration="3846000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)">
       <created>1691930932720</created>
@@ -214,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692908662421</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: feat: added POST request for ExchangeRateServlet">
+      <created>1692952940828</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692952940828</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +247,7 @@
     <MESSAGE value="feat: added POST request for CurrenciesServlet" />
     <MESSAGE value="feat: added ExchangeRatesServlet" />
     <MESSAGE value="feat: added ExchangeRateServlet and fixed Overload ToString method" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added ExchangeRateServlet and fixed Overload ToString method" />
+    <MESSAGE value="feat: feat: added POST request for ExchangeRateServlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: feat: added POST request for ExchangeRateServlet" />
   </component>
 </project>
