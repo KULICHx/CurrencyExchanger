@@ -10,11 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0d00170-9ab9-414c-b344-6f78ef40ea9d" name="Changes" comment="feat: feat: added POST request for ExchangeRateServlet">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/Exchange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRatesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ExchangeRatesServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +179,7 @@
       <workItem from="1692993017253" duration="1571000" />
       <workItem from="1693030484032" duration="972000" />
       <workItem from="1693131550995" duration="3846000" />
+      <workItem from="1693139684536" duration="3532000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Created a stub Java backend application with javax.servlet&#10;&#10;feat: Created tables in the database, and manually filled them with initial data (several currencies, exchange rates)">
       <created>1691930932720</created>
